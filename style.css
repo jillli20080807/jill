@@ -1206,20 +1206,18 @@ body {
     margin: 0 0 25px;
 }
 
-/* 底部圖片區域 */
 .memory-picture {
     width: 100%;
-    min-height: 0;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 8px;
+    margin-top: 30px;
+    text-align: center;
 }
 
-/* 底部圖片尺寸 */
 .memory-picture img {
     width: 100%;
+    max-width: 800px;
     height: auto;
     display: block;
+    margin: 0 auto;
 }
 
 /* 底部章節切換位置 */
@@ -1253,4 +1251,15 @@ body {
 /* 滑鼠移到下一章按鈕時變色 */
 .memory-navigation a:hover {
     background-color: #594331;
+}
+.history-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.history-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
