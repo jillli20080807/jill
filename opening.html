@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <!-- 讓網頁適應不同裝置的螢幕尺寸 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Opening</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+   <!-- 黑幕背景雨聲音效 -->
+<audio id="rainSound" autoplay loop>
+
+    <!-- 雨聲音效的檔案路徑 -->
+    <source src="Images/Audio/rain2.mp3" type="audio/mpeg">
+
+</audio>
+
+    <div class="opening-page">
+
+        <div class="opening-text">
+
+            <p>早上八點，雄英高中。</p>
+
+            <p>細雨籠罩著整座城市，又是一天普通的上學日。</p>
+
+            <p>...</p>
+
+        </div>
+
+        <a href="prologue.html" class="opening-next">
+            next ▸
+        </a>
+
+    </div>
+<script>
+
+    // 取得雨聲音效
+    const rain = document.getElementById("rainSound");
+
+    // 設定雨聲音量為40%
+    rain.volume = 0.4;
+
+    // 嘗試在黑幕出現時自動播放雨聲
+    rain.play().catch(() => {
+
+        document.addEventListener("click", () => {
+            rain.play();
+        }, { once: true });
+
+    });
+
+</script>
+</body>
+
+</html>
