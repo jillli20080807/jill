@@ -12,6 +12,34 @@
 
 
 <body>
+    <div id="notice-screen">
+    <div class="notice-content">
+
+        <p class="notice-label">NOTICE</p>
+
+        <h1>遊玩前聲明</h1>
+
+        <hr>
+
+            <p class="notice-description">
+            本網站為個人夢向二次創作網站。<br>
+            內容包含原創角色、夢向情節及非官方時間線設定設定。<br>
+            請勿完全代入原作及官方，亦無商業營利用途。<br>
+            故事以夢設第一視角出發，若對夢向創作有所不適，請自行斟酌遊玩。<br>
+            
+        
+        <span class="notice-english">
+            Thank you for your understanding.
+        </span>
+        
+</p>
+
+        <button onclick="enterWebsite()">
+            同意並進入 ▸
+        </button>
+
+    </div>
+</div>
     <div class="title-screen">
 
     <div class="home-logo-box">
@@ -31,6 +59,32 @@
         </div>
 
     </div>
+<script>
+
+// 取得聲明畫面
+const notice = document.getElementById("notice-screen");
+
+// 如果已經同意聲明，就直接顯示首頁
+if (sessionStorage.getItem("noticeAccepted") === "true") {
+    notice.style.display = "none";
+}
+
+// 點擊「同意並進入」按鈕
+function enterWebsite() {
+
+    // 記錄使用者已同意聲明
+    sessionStorage.setItem("noticeAccepted", "true");
+
+    // 聲明畫面淡出
+    notice.style.opacity = "0";
+
+    // 0.8 秒後隱藏聲明畫面
+    setTimeout(function() {
+        notice.style.display = "none";
+    }, 800);
+}
+
+</script>
 </body>
 
 </html>

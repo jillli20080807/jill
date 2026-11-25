@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prologue</title>
+    <link rel="stylesheet" href="conversation.css">
+</head>
+
+<body>
+    <!-- 背景雨聲 -->
+<audio id="rainSound" autoplay loop>
+    <source src="Images/Audio/rain2.mp3"
+            type="audio/mpeg">
+</audio>
+
+    <!-- 故事場景 -->
+    <div class="game-scene">
+
+        <!-- 角色立繪 -->
+        <img src="Images/rty.png"
+             class="character character-left"
+             id="tooru">
+
+        <img src="Images/mizuri.png"
+             class="character character-right"
+             id="mizuri">
+
+        <!-- 對話區域 -->
+        <div class="dialogue-box" id="dialogueBox">
+
+            <!-- 角色姓名 -->
+            <div class="speaker" id="speaker">
+                水里
+            </div>
+
+            <!-- 對話內容 -->
+            <p id="dialogueText">
+             透!要不要去我的貓咖躲雨?
+            </p>
+
+            <span class="continue">▼</span>
+
+        </div>
+
+        <!-- 黑幕轉場 -->
+        <div class="fade-screen" id="fadeScreen"></div>
+
+    </div>
+
+    <script src="conversation.js"></script>
+
+</body>
+
+</html>

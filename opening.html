@@ -21,11 +21,13 @@
     <div class="opening-page">
 
         <div class="opening-text">
+            <p>十多年前——</p>
+            <p>早晨七點的雄英高中，天空下著細雨。</p>
 
-            <p>早上八點，雄英高中。</p>
-
-            <p>細雨籠罩著整座城市，又是一天普通的上學日。</p>
-
+            <p>又是一天普通的上學日。</p>
+            <p>習慣提早到校的我聽著窗外連綿不絕的雨聲。</p>
+            <p>教室尚未迎來往日的喧囂。</p>
+            <p>一切都和平時沒有什麼不同。</p>
             <p>...</p>
 
         </div>
@@ -52,6 +54,28 @@
 
     });
 
+</script>
+<!-- 點擊滑鼠逐句顯示開場文字 -->
+<script>
+    const lines = document.querySelectorAll(".opening-text p");
+    const nextButton = document.querySelector(".opening-next");
+
+    document.addEventListener("click", function () {
+
+        // 尋找下一句尚未完整顯示的文字
+        for (let line of lines) {
+
+            if (parseFloat(getComputedStyle(line).opacity) < 1) {
+                line.classList.add("show-now");
+                return;
+            }
+
+        }
+
+        // 所有文字顯示完畢後，顯示下一頁按鈕
+        nextButton.classList.add("show-now");
+
+    });
 </script>
 </body>
 

@@ -1,0 +1,170 @@
+
+/* 基本設定 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+/* 故事背景 */
+.game-scene {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("Images/dd.jpg");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* 角色立繪 */
+.character {
+    position: absolute;
+    bottom: 0;
+    height: 90%;
+    width: auto;
+    max-width: 48%;
+    object-fit: contain;
+    object-position: bottom;
+    transition: filter 0.5s;
+}
+
+/* 左側角色 */
+.character-left {
+    left: 10%;
+}
+
+/* 右側角色 */
+.character-right {
+    right: 10%;
+}
+
+/* 遊戲對話框 */
+.dialogue-box {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 85%;
+    min-height: 180px;
+    padding: 25px;
+    box-sizing: border-box;
+
+  background-color: rgba(180, 154, 130, 0.9);
+border: 4px solid #E8D5C0;
+    border-radius: 12px;
+    color: white;
+
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* 說話者姓名 */
+.speaker {
+    font-size: 24px;
+    font-weight: bold;
+    color: #594334;
+    border-bottom: 1px solid #E8D5C0;
+    padding-bottom: 10px;
+}
+
+/* 對話文字 */
+#dialogueText {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* 繼續符號 */
+.continue {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    color: #D8C3AD;
+    animation: blink 1.2s infinite;
+}
+
+/* 閃爍動畫 */
+@keyframes blink {
+    50% {
+        opacity: 0.2;
+    }
+}
+
+/* 黑幕 */
+.fade-screen {
+    position: absolute;
+    inset: 0;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 2s;
+    z-index: 100;
+}
+
+/* 黑幕淡入 */
+.fade-screen.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* 水里的淡粉色對話框 */
+.dialogue-box.mizuri-theme {
+    background-color: rgba(248, 223, 231, 0.9);
+    border-color: #DDA5B8;
+    color: #805367;
+}
+
+/* 水里的姓名與分隔線 */
+.mizuri-theme .speaker {
+    color: #A65D79;
+    border-bottom-color: #DDA5B8;
+}
+
+/* 水里的繼續符號 */
+.mizuri-theme .continue {
+    color: #A65D79;
+}
+/* 角色預設不動 */
+.character {
+    animation: none;
+}
+
+/* 說話時才播放動畫 */
+.character.speaking {
+    animation: walking 0.8s ease-in-out infinite;
+}
+
+/* 上下晃動動畫 */
+@keyframes walking {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 走路時輕微上下晃動 */
+@keyframes walking {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* 兩人的步伐錯開 */
+.character-right {
+    animation-delay: 0.4s;
+}
+
