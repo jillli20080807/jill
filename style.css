@@ -580,7 +580,7 @@ body {
     background-color: #D8C3AD;
     background-size: cover;
     background-position: center;
-    background-image: url("Images/ll.jpg");
+    background-image: url("Images/chair.jpg");
 }
 
 /* 章節名稱 */
@@ -594,7 +594,8 @@ body {
 }
 
 /* 遊戲對話框 */
-.dialogue-box {
+.dialogue-box,
+#chapter2-dialogue-box {
     position: absolute;
     bottom: 40px;
     left: 50%;
@@ -1613,4 +1614,243 @@ border: none;
     animation: none !important;
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+#prologue {
+    position: fixed;
+    inset: 0;
+    background: #000000;
+    color: #ffffff;
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+    padding-top: 12vh;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#prologue-text {
+    width: 80%;
+    max-width: 850px;
+    max-height: 80vh;
+    overflow-y: auto;
+
+    text-align: left;
+    font-size: 20px;
+    line-height: 1.9;
+    letter-spacing: 2px;
+}
+
+#prologue-text p {
+    margin: 0 0 18px;
+    animation: textFade 0.8s ease forwards;
+}
+/* 序章標題 */
+.prologue-title {
+    width: 80%;
+    max-width: 850px;
+    text-align: left;
+    border-bottom: 1px solid #555555;
+    padding-bottom: 20px;
+    margin-bottom: 35px;
+}
+
+.prologue-title h1 {
+    font-size: 30px;
+    letter-spacing: 10px;
+    color: #ffffff;
+    margin: 0;
+}
+
+.prologue-title p {
+    font-size: 14px;
+    letter-spacing: 6px;
+    font-style: italic;
+    color: #999999;
+    margin-top: 10px;
+}
+/* 序章人物動作 */
+#prologue-text .prologue-action {
+    font-style: italic;
+    color: #BBBBBB;
+}
+/* 動作文字：灰色斜體 */
+#prologue-text .prologue-action {
+    font-style: italic;
+    color: #999999;
+}
+
+/* 紅色文字：正常字體 */
+#prologue-text .prologue-red {
+    color: #D9534F;
+    font-style: normal;
+}
+
+/* 第二章黑幕 */
+
+.chapter2-page {
+    margin: 0;
+background-color: #000;
+background-image: url("Images/my.jpeg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+    color: #ddd;
+    min-height: 100vh;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 2s ease;}
+
+#chapter2-intro {
+    width: 80%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding-top: 10vh;
+    cursor: pointer;
+}
+
+#chapter2-intro h1 {
+    text-align: left;
+    font-size: 30px;
+    font-weight: normal;
+    letter-spacing: 10px;
+}
+
+.chapter2-divider {
+    width: 100%;
+    height: 1px;
+    background: #555;
+    margin: 30px 0 50px;
+}
+
+#chapter2-text {
+    text-align: left;
+    font-size: 20px;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+#chapter2-text p {
+    animation: chapter2Appear 0.8s ease forwards;
+}
+
+@keyframes chapter2Appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.chapter2-page.chapter2-fade {
+    opacity: 0;
+}
+/* 第二章對話場景 */
+
+.chapter2-dialogue-page {
+    margin: 0;
+    background: #000;
+    overflow: hidden;
+}
+
+.chapter2-scene {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("Images/mt.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+/* 角色立繪 */
+
+.chapter2-character {
+    position: absolute;
+    bottom: 0;
+    height: 85vh;
+    object-fit: contain;
+    transition: filter 0.3s;
+}
+
+#tooru {
+    left: 10%;
+}
+
+#nemuri {
+    right: 10%;
+}
+
+
+
+/* 角色名字 */
+
+#chapter2-speaker {
+    font-size: 23px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* 對話文字 */
+
+#chapter2-dialogue-text {
+    font-size: 21px;
+    line-height: 1.8;
+    letter-spacing: 2px;
+}
+
+.chapter2-arrow {
+    text-align: right;
+    margin-top: 15px;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* 心崎透配色 */
+#chapter2-dialogue-box.tooru {
+    background-color: #A17C5D;
+    border-color: #E8D5C0;
+    color: #E8D5C0;
+}
+
+/* 香山睡配色 */
+#chapter2-dialogue-box.nemuri {
+    background-color: #60506F;
+    border-color: #E3D5F2;
+    color: #E3D5F2;
+}
+
+/* 動作敘事配色 */
+#chapter2-dialogue-box.narration {
+    background-color: #252525;
+    border-color: #777777;
+    color: #DDDDDD;
+}
+
+/* 角色名字沿用對話框文字顏色 */
+    #chapter2-speaker {
+    font-size: 23px;
+    font-weight: bold;
+    color: inherit;
+
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+/* 第二章動作文字：灰色斜體 */
+#chapter2-action {
+    font-style: italic;
+    color: inherit;
+    opacity: 0.7;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+}
+
+#chapter2-action:empty {
+    display: none;
 }

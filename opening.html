@@ -32,11 +32,19 @@
 
         </div>
 
-        <a href="prologue.html" class="opening-next">
-            next ▸
+       <a href="#" class="opening-next" id="start-prologue">
+        next ▸
         </a>
-
     </div>
+    <<div id="prologue">
+
+    <div class="prologue-title">
+        <h1>序　章</h1>
+    </div>
+
+    <div id="prologue-text"></div>
+
+</div>
 <script>
 
     // 取得雨聲音效
@@ -77,6 +85,28 @@
 
     });
 </script>
-</body>
+<!-- 序章背景音樂 -->
+<audio id="schoolBgm" src="Images/Audio/日の喜び.mp3" loop></audio>
 
+    <source src="Audio/school-bgm.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- 背景音樂 -->
+
+<audio id="dailyBgm" src="Images/Audio/Daily_life.mp3" loop></audio>
+
+<audio id="funBgm" src="Images/Audio/とある日常.mp3" loop></audio>
+
+<audio id="quietBgm" src="Images/Audio/日常.mp3" loop></audio>
+
+<audio id="heartbeat" src="Images/Audio/heartbeat.mp3" loop></audio>
+
+<audio id="tensionBgm" src="Images/Audio/Whispers.mp3" loop></audio>
+
+<audio id="impactSound" src="Images/Audio/impact.mp3"></audio>
+
+<script src="prologuePages.js"></script>
+
+</body>
 </html>

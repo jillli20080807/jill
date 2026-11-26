@@ -47,7 +47,7 @@ const dialogues = [
     },
      {
         speaker: "曲間",
-        text:"最好是，你都連軸轉好幾天了",
+        text:"是嗎?，你都連軸轉好幾天了",
         character: "mizuri"
     },
     {
@@ -108,7 +108,7 @@ dialogueText.append(
 
     } else {
 
-        // 水里的粉色對話框
+        // 曲間的藍色對話框
         dialogueBox.classList.add("mizuri-theme");
 
         tooru.style.filter = "brightness(0.6)";
