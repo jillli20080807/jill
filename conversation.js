@@ -2,54 +2,71 @@
 // 對話內容
 const dialogues = [
     {
-        speaker: "水里",
-        text: "透!要不要去我的貓咖躲雨?",
+        speaker: "曲間",
+        text: "總算是結束了。",
         character: "mizuri"
     },
     {
         speaker: "心崎透",
-        text: "也好...",
+        text: "是啊...",
         character: "tooru"
     },
     {
-        speaker: "水里",
-        text: "總覺得很少聽透提起以前的事情呢。",
+        speaker: "曲間",
+        text: "雨好像越下越大了，先找個地方躲一下吧。",
         character: "mizuri"
     },
     {
         speaker: "心崎透",
-        text: "沒什麼好說的，很普通",
+        text: "好。",
+        action:"(跟著曲間小跑到屋簷下躲雨)",
         character: "tooru"
     },
     {
-        speaker: "水里",
-        text: "透還是一樣冷淡",
+        speaker: "曲間",
+        action:"（伸出手，任由雨滴落在掌心。）",
+        text: "不過，這場雨來得還真是時候。",
         character: "mizuri"
     },
     {
         speaker: "心崎透",
-        text: "我...我沒有",
+        action:"看向曲間",
+        text: "怎麼這樣說?",
         character: "tooru"
     },
     {
-        speaker: "水里",
-        text: "就是有!",
+        speaker: "曲間",
+        text: "至少能讓某個不懂得休息的人停下來一會兒。",
+        action:"意有所指",
         character: "mizuri"
     },
     {
         speaker: "心崎透",
-        text: "那...那我跟你說我第一次翹課的事吧",
+        text: "我不累",
         character: "tooru"
     },
      {
+        speaker: "曲間",
+        text:"最好是，你都連軸轉好幾天了",
+        character: "mizuri"
+    },
+    {
         speaker: "心崎透",
-        text:"別再說我冷淡了",
+        action:"（避開曲間的視線，望向屋簷外的雨幕。）",
+        text: "我覺得...這場雨和那時候很像。",
         character: "tooru"
     },
     {
-        speaker: "水里",
-        text: "好耶!",
+        speaker: "曲間",
+        text: "我們還很天真的時候嗎?",
+        action:"（無奈地瞥了透一眼。）",
         character: "mizuri"
+    },
+     {
+        speaker: "心崎透",
+        action:"（望著雨滴在地面濺起的水花出神。）",
+        text: "......",
+        character: "tooru"
     }
 ];
 
@@ -69,8 +86,18 @@ const mizuri = document.getElementById("mizuri");
 function showDialogue() {
 
     speaker.textContent = dialogues[current].speaker;
-    dialogueText.textContent = dialogues[current].text;
+dialogueText.textContent = "";
 
+if (dialogues[current].action) {
+    const action = document.createElement("span");
+    action.className = "dialogue-action";
+    action.textContent = dialogues[current].action;
+    dialogueText.appendChild(action);
+}
+
+dialogueText.append(
+    dialogues[current].text
+);
     if (dialogues[current].character === "tooru") {
 
         // 透的棕色對話框
