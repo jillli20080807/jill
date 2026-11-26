@@ -742,7 +742,7 @@ body {
 
 /* 返回按鈕 */
 .tooru-page .back-button {
-    background-color: #8B6B50;
+    background-color:#EBCB70;
     color: white;
 }
 
@@ -763,7 +763,8 @@ body {
 /* 滑鼠懸停效果 */
 .tooru-page .continue-button:hover,
 .tooru-page .back-button:hover {
-    background-color: #594334;
+ background-color: #FFFFCE;
+ color: black;
 }
 
 /* 遊戲選擇介面 */
@@ -840,8 +841,12 @@ body {
 }
 
 .start-page .back-button {
-    background-color: #8B6B50;
+    background-color:#EBCB70;
     color: white;
+}
+.start-page .back-button:hover {
+  background-color: #FFFFCE;
+     color: black;
 }
 
 .start-content {
@@ -1580,12 +1585,21 @@ body {
 
 /* 背景故事頁面返回按鈕顏色 */
 .history-page .back-button {
-    background-color: #8C6E53;
+border: none;
+    border-radius: 8px;
+    color: WHITE;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    z-index: 10;
 }
 
 /* 返回按鈕滑鼠變色 */
 .history-page .back-button:hover {
-    background-color: #594331;
+    background-color: #FFFFCE;
+    color: black;
+    
 }
 /* 點擊滑鼠後提前顯示單句文字 */
 .opening-text p.show-now {
